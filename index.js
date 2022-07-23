@@ -9,6 +9,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+/* 
+.env
+DB_USER="user_1"
+SECRET_KEY="ua1Ztmu43ex1alzq"
+ */
+
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.SECRET_KEY}@cluster1.ugcetp4.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
